@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=row\ column
+comment0.target=Pair(int,\ int)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Pair\n\ @param\ int\ row\ --\ the\ row\ number\ of\ the\ Pair\n\ @param\ int\ column\ --\ the\ column\ number\ of\ the\ Pair\n\ The\ fill\ number\ is\ originally\ set\ to\ zero,\ standing\ for\ 'unfilled'\n
+comment1.params=fill
+comment1.target=void\ fill(int)
+comment1.text=\n\ 'Fills'\ the\ Pair\ with\ the\ number\ given\n\ @param\ fill\ --the\ number\ the\ pair\ is\ to\ be\ filled\ with\n\ @return\ none\n
+numComments=2

@@ -1,0 +1,48 @@
+Class documentation
+<---- javadoc command: ---->
+/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+/usr/share/bluej/bluejcore.jar:/usr/share/bluej/junit-4.8.2.jar:/usr/share/bluej/userlib/pi4j-service.jar:/usr/share/bluej/userlib/pi4j-device.jar:/usr/share/bluej/userlib/pi4j-core.jar:/usr/share/bluej/userlib/pi4j-gpio-extension.jar:/home/pi/ch15_e11_p22/ch15Programs
+-d
+/home/pi/ch15_e11_p22/ch15Programs/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+/usr/share/bluej/bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+/home/pi/ch15_e11_p22/ch15Programs/Pair.java
+<---- end of javadoc command ---->
+Loading source file /home/pi/ch15_e11_p22/ch15Programs/Pair.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_65
+Building tree for all the packages and classes...
+Generating /home/pi/ch15_e11_p22/ch15Programs/doc/Pair.html...
+/home/pi/ch15_e11_p22/ch15Programs/Pair.java:8: warning - @Payton is an unknown tag.
+/home/pi/ch15_e11_p22/ch15Programs/Pair.java:8: warning - @9-12-2018 is an unknown tag.
+/home/pi/ch15_e11_p22/ch15Programs/Pair.java:33: warning - @param tag has no arguments.
+/home/pi/ch15_e11_p22/ch15Programs/Pair.java:21: warning - @param argument "int" is not a parameter name.
+/home/pi/ch15_e11_p22/ch15Programs/Pair.java:21: warning - @param argument "int" is not a parameter name.
+/home/pi/ch15_e11_p22/ch15Programs/Pair.java:33: warning - @param argument "" is not a parameter name.
+Generating /home/pi/ch15_e11_p22/ch15Programs/doc/package-frame.html...
+Generating /home/pi/ch15_e11_p22/ch15Programs/doc/package-summary.html...
+Generating /home/pi/ch15_e11_p22/ch15Programs/doc/constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /home/pi/ch15_e11_p22/ch15Programs/doc/allclasses-frame.html...
+Generating /home/pi/ch15_e11_p22/ch15Programs/doc/allclasses-noframe.html...
+Generating /home/pi/ch15_e11_p22/ch15Programs/doc/index.html...
+Generating /home/pi/ch15_e11_p22/ch15Programs/doc/stylesheet.css...
+6 warnings

@@ -1,33 +1,37 @@
 
 /**
- * Write a description of class Pair here.
+ * Pair class to act as 'locations' to 'fill' with floodfill program
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Payton Schubel
+ * @9-12-2018
  */
 public class Pair
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    //instance Values
+    private int row; //the row number of the Pair
+    private int column; //the column number of the Pair
+    private int fill; //the fill number of the Pair
 
     /**
      * Constructor for objects of class Pair
+     * @param int row -- the row number of the Pair
+     * @param int column -- the column number of the Pair
+     * The fill number is originally set to zero, standing for 'unfilled'
      */
-    public Pair()
+    public Pair(int row, int column)
     {
-        // initialise instance variables
-        x = 0;
+        //Initializing Variables
+        this.row = row;
+        this.column = column;
+        this.fill = 0;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * 'Fills' the Pair with the number given
+     * @param fill --the number the pair is to be filled with
+     * @return none
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void fill(int fill){
+        this.fill = fill;
     }
 }
