@@ -9,7 +9,6 @@ public class Pair
 {
     //instance Values
     private int[] coordinates = new int[2]; //the row/column pair of the Pair
-    private boolean filled; //indicates whether square is filled or not.
 
     /**
      * Constructor for objects of class Pair
@@ -22,7 +21,6 @@ public class Pair
         //Initializing Variables
         this.coordinates[0] = row;
         this.coordinates[1] = column;
-        this.filled = false;
     }
     
     /**
@@ -61,21 +59,21 @@ public class Pair
     }
     
     /**
-     * Returns the filled value of the pair
+     * Returns the row number of the Pair class.
      * @param none
-     * @return boolean -- whether pair is filled or not
+     * @return int the row number
      */
-    public boolean getFilled(){
-        return filled;
+    public int getRow(){
+        return this.coordinates[0];
     }
     
     /**
-     * Changes the filled value to true (can't go back)
+     * Returns the column number of the Pair class.
      * @param none
-     * @return none
+     * @return int the column number
      */
-    public void setFilled(){
-        filled = true;
+    public int getColumn(){
+        return this.coordinates[1];
     }
     
     /**
