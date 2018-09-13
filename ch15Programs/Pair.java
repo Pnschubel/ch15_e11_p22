@@ -2,15 +2,14 @@
 /**
  * Pair class to act as 'locations' to 'fill' with floodfill program
  * 
- * @Payton Schubel
- * @9-12-2018
+ * @author Payton Schubel
+ * @version 9-12-2018
  */
 public class Pair
 {
     //instance Values
-    private int row; //the row number of the Pair
-    private int column; //the column number of the Pair
-    private int fill; //the fill number of the Pair
+    private int[] coordinates = new int[2]; //the row/column pair of the Pair
+    private boolean filled; //indicates whether square is filled or not.
 
     /**
      * Constructor for objects of class Pair
@@ -21,17 +20,70 @@ public class Pair
     public Pair(int row, int column)
     {
         //Initializing Variables
-        this.row = row;
-        this.column = column;
-        this.fill = 0;
+        this.coordinates[0] = row;
+        this.coordinates[1] = column;
+        this.filled = false;
     }
-
+    
     /**
-     * 'Fills' the Pair with the number given
-     * @param fill --the number the pair is to be filled with
+     * Returns the Pair of coordinates for the location N, S, E, W (depending) of this pair.
+     * @precondition in the direction called, the coordinate exists.
+     * 
+     * @param char -- the direction (will be 'n'/'N', 'e'/'E', 's'/'S', or 'w'/'W')
+     * @return Pair -- the coordinate pair of on that side of this current pair
+     */
+    public Pair sidePair(char location){
+        Pair newPair; //the pair to hold the new coordinates
+        int row = this.coordinates[0];
+        int column = this.coordinates[1]; //temp values to hold the coordinate locations
+        
+        //Creates the new pair for the proper location
+        if (location == 'n' || location == 'N'){
+            //creates a pair 'above' this one
+            newPair = new Pair(row - 1, column);
+        }else{
+            if (location == 'e' || location == 'E'){
+                //creates a pair 'to the right' of this one
+                newPair = new Pair (row, column + 1);
+            }else{
+                if (location == 's' || location == 'S'){
+                    //creates a pair 'below' this one
+                    newPair = new Pair(row + 1, column);
+                }else{
+                    //At this point, we know that the char is w/W (or a typo, but should be w/W), so west
+                    //creates a pair 'to the left' of this one
+                    newPair = new Pair(row, column - 1);
+                }
+            }
+        }
+        
+        return newPair;
+    }
+    
+    /**
+     * Returns the filled value of the pair
+     * @param none
+     * @return boolean -- whether pair is filled or not
+     */
+    public boolean getFilled(){
+        return filled;
+    }
+    
+    /**
+     * Changes the filled value to true (can't go back)
+     * @param none
      * @return none
      */
-    public void fill(int fill){
-        this.fill = fill;
+    public void setFilled(){
+        filled = true;
+    }
+    
+    /**
+     * Returns the row and column of the Pair class.
+     * @param none
+     * @return int[2] row, column pair
+     */
+    public int[] getCoordinates(){
+        return this.coordinates;
     }
 }
