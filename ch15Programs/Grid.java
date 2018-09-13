@@ -45,32 +45,39 @@ public class Grid
       /**ADDS ALL UNFILLED SIDE COORDINATES TO STACK**/
       
       //Starts with eastword direction, makes sure coordinate exists
-      if(coordinates.getColumn() < SIZE){//SIZE-1 is the eastmost coordinate, can't go further
+      if(coordinates.getColumn() < (SIZE-1)){//SIZE-1 is the eastmost coordinate, can't go further
           //Makes sure the pair isn't filled yet
-          if (grid[coordinates.getRow()][coordinates.getColumn() + 1] == 0)
-            squares.push(coordinates.sidePair('e'));//gets coordinates of eastern sidePair
+          if (grid[coordinates.getRow()][coordinates.getColumn() + 1] == 0){
+            squares.push(coordinates.sidePair('e'));
         }
+        }//gets coordinates of eastern sidePair
+        
       
       //Adds the pair in the southward direction, lowest of which is at 9
-      if(coordinates.getRow() < SIZE){//SIZE - 1 is the southmost coordinate, can't go further
+      if(coordinates.getRow() < (SIZE-1)){//SIZE - 1 is the southmost coordinate, can't go further
           //Makes sure the pair isn't filled yet
-          if (grid[coordinates.getRow() + 1][coordinates.getColumn()] == 0)
+          if (grid[coordinates.getRow() + 1][coordinates.getColumn()] == 0){
             squares.push(coordinates.sidePair('s'));//gets coodrinates of southern sidePair
+        }
         }
         
       //Adds the pair in the western direction, 
       if(coordinates.getColumn() > 0){//0 is the westmost coordinate, can't go further
           //Makes sure the pair isn't filled yet
-          if (grid[coordinates.getRow()][coordinates.getColumn() - 1] == 0)
+          if (grid[coordinates.getRow()][coordinates.getColumn() - 1] == 0){
             squares.push(coordinates.sidePair('w'));//gets coodrinates of western sidePair
+        }
         }
         
       //Adds the pair in the northern direction
       if(coordinates.getRow() > 0){//0 is the northmost coordinate, can't go further
           //Makes sure the pair isn't filled yet
-          if (grid[coordinates.getRow() - 1][coordinates.getColumn()] == 0)
-            squares.push(coordinates.sidePair('s'));//gets coodrinates of northern sidePair
+          if (grid[coordinates.getRow() - 1][coordinates.getColumn()] == 0){
+            squares.push(coordinates.sidePair('n'));//gets coodrinates of northern sidePair
         }
+        }
+        
+      System.out.println(fill + ": " + squares);
    }
    
    /**
