@@ -44,11 +44,27 @@ public class Grid
       
       /**ADDS ALL UNFILLED SIDE COORDINATES TO STACK**/
       
-      //Starts with eastword direction, makes sure coordinate exists
+      //Adds the pair in the northern direction
+      if(coordinates.getRow() > 0){//0 is the northmost coordinate, can't go further
+          //Makes sure the pair isn't filled yet
+          if (grid[coordinates.getRow() - 1][coordinates.getColumn()] == 0){
+            //fills the square
+            grid[coordinates.getRow()-1][coordinates.getColumn()] = this.fill;
+            //updates fill
+            this.fill += 1;
+            this.squares.push(coordinates.sidePair('n'));//gets coodrinates of northern sidePair
+        }
+        }
+      
+      //Adds the eastword direction, makes sure coordinate exists
       if(coordinates.getColumn() < (SIZE-1)){//SIZE-1 is the eastmost coordinate, can't go further
           //Makes sure the pair isn't filled yet
           if (grid[coordinates.getRow()][coordinates.getColumn() + 1] == 0){
-            squares.push(coordinates.sidePair('e'));
+            //fills the square
+            grid[coordinates.getRow()][coordinates.getColumn()+1] = this.fill;
+            //updates fill
+            this.fill += 1;
+            this.squares.push(coordinates.sidePair('e'));
         }
         }//gets coordinates of eastern sidePair
         
@@ -57,7 +73,11 @@ public class Grid
       if(coordinates.getRow() < (SIZE-1)){//SIZE - 1 is the southmost coordinate, can't go further
           //Makes sure the pair isn't filled yet
           if (grid[coordinates.getRow() + 1][coordinates.getColumn()] == 0){
-            squares.push(coordinates.sidePair('s'));//gets coodrinates of southern sidePair
+            //fills the square
+            grid[coordinates.getRow()+1][coordinates.getColumn()] = this.fill;
+            //updates fill
+            this.fill += 1;
+            this.squares.push(coordinates.sidePair('s'));//gets coodrinates of southern sidePair
         }
         }
         
@@ -65,19 +85,14 @@ public class Grid
       if(coordinates.getColumn() > 0){//0 is the westmost coordinate, can't go further
           //Makes sure the pair isn't filled yet
           if (grid[coordinates.getRow()][coordinates.getColumn() - 1] == 0){
-            squares.push(coordinates.sidePair('w'));//gets coodrinates of western sidePair
+            //fills the square
+            grid[coordinates.getRow()][coordinates.getColumn()-1] = this.fill;
+            //updates fill
+            this.fill += 1;
+            this.squares.push(coordinates.sidePair('w'));//gets coodrinates of western sidePair
         }
         }
         
-      //Adds the pair in the northern direction
-      if(coordinates.getRow() > 0){//0 is the northmost coordinate, can't go further
-          //Makes sure the pair isn't filled yet
-          if (grid[coordinates.getRow() - 1][coordinates.getColumn()] == 0){
-            squares.push(coordinates.sidePair('n'));//gets coodrinates of northern sidePair
-        }
-        }
-        
-      System.out.println(fill + ": " + squares);
    }
    
    /**
@@ -90,12 +105,12 @@ public class Grid
        //Creates a starting pair
        Pair start = new Pair(row, column);
        //Adds starting pair onto the stack.
-       squares.push(start);
+       this.squares.push(start);
        
        //If grid isn't full, squares will have values in it.
        //So when square is empty, done with loop.
-       while (squares.size() > 0){
-           this.fillSquare(squares.pop());
+       while (this.squares.size() > 0){
+           this.fillSquare(this.squares.pop());
         }
     }
 
